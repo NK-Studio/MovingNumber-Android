@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.test.jetback">
+    package="com.nkstudio.movingnumber">
 
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -9,13 +11,22 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Jetback">
+        android:theme="@style/Theme.MovingNumber">
+        <service
+            android:name=".myservice.ShowYourNumber"
+            android:enabled="true"
+            android:exported="true"></service>
+        <service
+            android:name=".myservice.GoHomeService"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Jetback.NoActionBar">
+            android:theme="@style/Theme.MovingNumber.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
